@@ -6,3 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.classList.toggle("active");
   });
 });
+function copyToClipboard() {
+    const textToCopy = document.getElementById("textToCopy").innerText;
+    navigator.clipboard
+      .writeText(textToCopy)
+      .then(() => {
+        alert("Text copied to clipboard");
+      })
+      .catch((err) => {
+        alert("Failed to copy text: ", err);
+      });
+  }
